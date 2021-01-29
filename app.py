@@ -11,7 +11,7 @@ from matplotlib import pyplot as plt
 from skimage.morphology import extrema
 from skimage.morphology import watershed as skwater
 import sys
-from datetime import datetime
+import datetime
 
 
 
@@ -140,8 +140,10 @@ def detect(img):
 # ShowImage('Watershed',markers,'rgb')
     imgout = img.copy()
     imgout[markers == 0] = [0,0,255] #Label the watershed_line
-    today = datetime.date.today()
-    st.success(today)
+    
+
+    x = datetime.datetime.now()
+    st.success(x)
     
 
 # img.save(imgout)
