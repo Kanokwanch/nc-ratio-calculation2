@@ -11,6 +11,8 @@ from matplotlib import pyplot as plt
 from skimage.morphology import extrema
 from skimage.morphology import watershed as skwater
 import sys
+from datetime import datetime
+
 
 
 def detect(img):
@@ -138,7 +140,11 @@ def detect(img):
 # ShowImage('Watershed',markers,'rgb')
     imgout = img.copy()
     imgout[markers == 0] = [0,0,255] #Label the watershed_line
-
+    start_time = st.slider(
+     "When do you start?",
+      value=datetime(2020, 1, 1, 9, 30),
+      format="MM/DD/YY - hh:mm")
+    st.write("Start time:", start_time)
 
 # img.save(imgout)
 # cv2.imwrite('output.jpg', imgout)
