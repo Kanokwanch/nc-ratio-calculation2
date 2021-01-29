@@ -149,7 +149,7 @@ def detect(img):
     month_name = 'x มกราคม กุมภาพันธ์ มีนาคม เมษายน พฤษภาคม มิถุนายน กรกฎาคม สิงหาคม กันยายน ตุลาคม พฤศจิกายน ธันวาคม'.split()[now1.month]
     thai_year = now1.year + 543
     time_str = now1.strftime('%H:%M:%S')
-    st.success("%d %s %d %s"%(now1.day, month_name, thai_year, time_str)) 
+    st.success("%d %s %d     %s"%(now1.day, month_name, thai_year, time_str)) 
 
 # img.save(imgout)
 # cv2.imwrite('output.jpg', imgout)
