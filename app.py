@@ -143,7 +143,7 @@ def detect(img):
     
 
     x = datetime.datetime.now()
-    st.success(x)
+    st.success(x.strftime("%x"))
     
 
 # img.save(imgout)
