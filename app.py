@@ -11,7 +11,7 @@ from matplotlib import pyplot as plt
 from skimage.morphology import extrema
 from skimage.morphology import watershed as skwater
 import sys
-import datetime
+import datetime, pytz
 
 
 
@@ -142,9 +142,14 @@ def detect(img):
     imgout[markers == 0] = [0,0,255] #Label the watershed_line
     
 
-    x = datetime.datetime.now()
-    st.success(x.strftime("%x"))
-    
+    #x = datetime.datetime.now()
+    #st.success(x.strftime("%x"))
+    tz = pytz.timezone('Asia/Bangkok')
+    now1 = datetime.datetime.now(tz)
+    month_name = 'x มกราคม กุมภาพันธ์ มีนาคม เมษายน พฤษภาคม มิถุนายน กรกฎาคม สิงหาคม กันยายน ตุลาคม พฤศจิกายน ธันวาคม'.split()[now1.month]
+    thai_year = now1.year + 543
+    time_str = now1.strftime('%H:%M:%S')
+    st.success("%d %s %d %s"%(now1.day, month_name, thai_year, time_str)) 
 
 # img.save(imgout)
 # cv2.imwrite('output.jpg', imgout)
