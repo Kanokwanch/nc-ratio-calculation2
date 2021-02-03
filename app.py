@@ -17,9 +17,7 @@ import datetime, pytz
 
 def detect(img):
     img = np.array(img.convert('RGB'))
-    output = []
-    test1 = []
-    test2 = []
+    count = 0
     
     cell_hsvmin  = (52,88,124)  #Lower end of the HSV range defining the nuclei
     cell_hsvmax  = (150,190,255) #Upper end of the HSV range defining the nuclei
@@ -174,7 +172,8 @@ def detect(img):
         if nucleus_area/(cell_area+nucleus_area) != 0 and nucleus_area/(cell_area+nucleus_area) != 1 and nucleus_area/(cell_area+nucleus_area) != 0.5:
             # output.append(l,nucleus_area/(cell_area+nucleus_area))
             # output.append('\n')
-            st.write("Nucleus fraction for cell {0} is {1}".format(l,nucleus_area/(cell_area+nucleus_area)))
+            st.write("N/C ratio is {1}".format(nucleus_area/(cell_area+nucleus_area)))
+            count = count + 1
             # st.markdown("Nucleus fraction for cell {0} is {1}".format(l,nucleus_area/(cell_area+nucleus_area)))
             # test2.append(nucleus_area/(cell_area+nucleus_area))
             # output.append("Nucleus fraction for cell {0} is {1}".format(l,nucleus_area/(cell_area+nucleus_area)))
@@ -184,6 +183,7 @@ def detect(img):
             # output = "\n".join(output)
             # print("Nucleus fraction for cell {0} is {1} ".format(l,nucleus_area/(cell_area+nucleus_area)))
     # print(*output, sep = "\n") 
+    st.write("Sum of cell is "+ count)
     return img
 
 def about():
