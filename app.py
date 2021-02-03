@@ -183,7 +183,7 @@ def detect(img):
             # output = "\n".join(output)
             # print("Nucleus fraction for cell {0} is {1} ".format(l,nucleus_area/(cell_area+nucleus_area)))
     # print(*output, sep = "\n") 
-    st.write("Sum of cell is "+ count)
+    st.write("Sum of cell is ", count)
     return img
 
 def about():
