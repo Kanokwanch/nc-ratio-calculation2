@@ -172,7 +172,7 @@ def detect(img):
         if nucleus_area/(cell_area+nucleus_area) != 0 and nucleus_area/(cell_area+nucleus_area) != 1 and nucleus_area/(cell_area+nucleus_area) != 0.5:
             # output.append(l,nucleus_area/(cell_area+nucleus_area))
             # output.append('\n')
-            st.write("N/C ratio is " + nucleus_area/(cell_area+nucleus_area))
+            st.write("N/C ratio is ",nucleus_area/(cell_area+nucleus_area))
             count = count + 1
             # st.markdown("Nucleus fraction for cell {0} is {1}".format(l,nucleus_area/(cell_area+nucleus_area)))
             # test2.append(nucleus_area/(cell_area+nucleus_area))
