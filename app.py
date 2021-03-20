@@ -195,7 +195,9 @@ def detect(img):
 		cnt_lessthan06 = cnt_lessthan06 +1
 	else if i>0.6 && i<=1.0:
 		cnt_lessthan10 = cnt_lessthan10 +1
-	
+    st.write("0.00 - 0.40 : ", cnt_lessthan04)
+    st.write("0.41 - 0.60 : ", cnt_lessthan06)
+    st.write("0.61 - 1.00 : ", cnt_lessthan06)
     st.write("Sum of cell is ", count)
     return img
 
