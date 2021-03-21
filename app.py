@@ -15,9 +15,9 @@ import datetime, pytz
 import matplotlib.pyplot as plt
 
 out = [] 
-cnt_lessthan04 = 0
-cnt_lessthan06 = 0
-cnt_lessthan10 = 0
+cnt_lessthanf = 0
+cnt_lessthans = 0
+cnt_lessthano = 0
 def detect(img):
     img = np.array(img.convert('RGB'))
     count = 0
@@ -179,12 +179,12 @@ def detect(img):
             st.write("N/C ratio is ",nucleus_area/(cell_area+nucleus_area))
             out.append(nucleus_area/(cell_area+nucleus_area))
             count = count + 1
-        if nucleus_area/(cell_area+nucleus_area) <=0.40:
-            cnt_lessthan04 = cnt_lessthan04 +1
-        elif nucleus_area/(cell_area+nucleus_area) >0.40 and nucleus_area/(cell_area+nucleus_area)<=0.6:
-            cnt_lessthan06 = cnt_lessthan06 +1
-        elif nucleus_area/(cell_area+nucleus_area) >0.60 and nucleus_area/(cell_area+nucleus_area)<=1.0:
-            cnt_lessthan10 = cnt_lessthan10 +1
+            if nucleus_area/(cell_area+nucleus_area) <=0.40:
+                cnt_lessthanf = cnt_lessthanf +1
+            elif nucleus_area/(cell_area+nucleus_area) >0.40 and nucleus_area/(cell_area+nucleus_area)<=0.6:
+                cnt_lessthans = cnt_lessthans +1
+            elif nucleus_area/(cell_area+nucleus_area) >0.60 and nucleus_area/(cell_area+nucleus_area)<=1.0:
+                cnt_lessthano = cnt_lessthano +1
 	    
             # st.markdown("Nucleus fraction for cell {0} is {1}".format(l,nucleus_area/(cell_area+nucleus_area)))
             # test2.append(nucleus_area/(cell_area+nucleus_area))
