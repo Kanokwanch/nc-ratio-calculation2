@@ -224,8 +224,8 @@ def detect(img):
     chart_data['feature_importance'] = features_importances
 
     chart_v1 = alt.Chart(chart_data).mark_bar().encode(
-    x='features',
-    y='feature_importance')
+    x='range',
+    y='the number of cells')
     st.write("", "", chart_v1)
     return img
 
