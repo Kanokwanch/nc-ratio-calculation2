@@ -19,9 +19,9 @@ def detect(img):
     img = np.array(img.convert('RGB'))
     count = 0
     out = [] 
-    cnt_lessthanf = 0
-    cnt_lessthans = 0
-    cnt_lessthano = 0
+    cnt_lessthan04 = 0
+    cnt_lessthan06 = 0
+    cnt_lessthan10 = 0
     cell_hsvmin  = (52,88,124)  #Lower end of the HSV range defining the nuclei
     cell_hsvmax  = (150,190,255) #Upper end of the HSV range defining the nuclei
 
@@ -180,11 +180,11 @@ def detect(img):
             out.append(nucleus_area/(cell_area+nucleus_area))
             count = count + 1
             if nucleus_area/(cell_area+nucleus_area) <=0.40:
-                cnt_lessthanf = cnt_lessthanf +1
+                cnt_lessthan04 = cnt_lessthan04 +1
             elif nucleus_area/(cell_area+nucleus_area) >0.40 and nucleus_area/(cell_area+nucleus_area)<=0.6:
-                cnt_lessthans = cnt_lessthans +1
+                cnt_lessthan06 = cnt_lessthan06 +1
             elif nucleus_area/(cell_area+nucleus_area) >0.60 and nucleus_area/(cell_area+nucleus_area)<=1.0:
-                cnt_lessthano = cnt_lessthano +1
+                cnt_lessthan10 = cnt_lessthan10 +1
 	    
             # st.markdown("Nucleus fraction for cell {0} is {1}".format(l,nucleus_area/(cell_area+nucleus_area)))
             # test2.append(nucleus_area/(cell_area+nucleus_area))
@@ -205,14 +205,22 @@ def detect(img):
 # 		cnt_lessthan06 = cnt_lessthan06 +1
 # 	else if i>0.6 && i<=1.0:
 # 		cnt_lessthan10 = cnt_lessthan10 +1
-    st.write("0.00 - 0.40 : ", cnt_lessthans)
-    st.write("0.41 - 0.60 : ", cnt_lessthanf)
-    st.write("0.61 - 1.00 : ", cnt_lessthano)
+    st.write("0.00 - 0.40 : ", cnt_lessthan04)
+    st.write("0.41 - 0.60 : ", cnt_lessthan06)
+    st.write("0.61 - 1.00 : ", cnt_lessthan10)
     st.write("Sum of cell is ", count)
+    #histrogram
     arr = out
     fig, ax = plt.subplots()
     ax.hist(arr, bins=3)
     st.pyplot(fig)
+    #bar graph
+    fig = plt.figure()
+    ax = fig.add_axes([0,0,1,1])
+    langs = ['0.00 - 0.40', '0.41 - 0.60', '0.61 - 1.00']
+    students = [cnt_lessthan04,cnt_lessthan06,cnt_lessthan10]
+    ax.bar(langs,students)
+    plt.show()
     return img
 
 def about():
