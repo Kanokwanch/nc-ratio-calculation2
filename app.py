@@ -220,8 +220,8 @@ def detect(img):
     features_importances = np.array([cnt_lessthan04, cnt_lessthan06, cnt_lessthan10])
 
     chart_data = pd.DataFrame()
-    chart_data['range'] = features
-    chart_data['the number of cells'] = features_importances
+    chart_data['features'] = features
+    chart_data['feature_importance'] = features_importances
 
     chart_v1 = alt.Chart(chart_data).mark_bar().encode(
     x='features',
