@@ -14,14 +14,14 @@ import sys
 import datetime, pytz
 import matplotlib.pyplot as plt
 
-out = [] 
-cnt_lessthanf = 0
-cnt_lessthans = 0
-cnt_lessthano = 0
+
 def detect(img):
     img = np.array(img.convert('RGB'))
     count = 0
-    
+    out = [] 
+    cnt_lessthanf = 0
+    cnt_lessthans = 0
+    cnt_lessthano = 0
     cell_hsvmin  = (52,88,124)  #Lower end of the HSV range defining the nuclei
     cell_hsvmax  = (150,190,255) #Upper end of the HSV range defining the nuclei
 
