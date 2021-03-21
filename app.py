@@ -13,7 +13,8 @@ from skimage.morphology import watershed as skwater
 import sys
 import datetime, pytz
 import matplotlib.pyplot as plt
-
+import pandas as pd
+import altair as alt
 
 def detect(img):
     img = np.array(img.convert('RGB'))
@@ -215,12 +216,17 @@ def detect(img):
     ax.hist(arr, bins=3)
     st.pyplot(fig)
     #bar graph
-    fig = plt.figure()
-    ax = fig.add_axes([0,0,1,1])
-    langs = ['0.00 - 0.40', '0.41 - 0.60', '0.61 - 1.00']
-    students = [cnt_lessthan04,cnt_lessthan06,cnt_lessthan10]
-    ax.bar(langs,students)
-    plt.show()
+    features = np.array(['0.00 - 0.40', '0.41 - 0.60', '0.61 - 1.00'])
+    features_importances = np.array([cnt_lessthan04, cnt_lessthan06, cnt_lessthan10])
+
+    chart_data = pd.DataFrame()
+    chart_data['range'] = features
+    chart_data['the number of cells'] = features_importances
+
+    chart_v1 = alt.Chart(chart_data).mark_bar().encode(
+    x='features',
+    y='feature_importance')
+    st.write("", "", chart_v1)
     return img
 
 def about():
