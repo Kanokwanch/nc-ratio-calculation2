@@ -236,9 +236,11 @@ def about():
 
             1. Kanokwan Chasuwan
             2. Chanistha Krikhajornkitti
-
+            
 		''')
-    st.text('The purpose of this paper is to calculate nc ratio from ascites fluid cell to facilitate pathologist instead of reading the result by human eyes via microscope.  This project use image processing technique to find boundary of each cell by using HSV color separation after that calculate the nc ratio then use algorithm k-means clustering to find group of cell that looks similar and transform to grayscale image by using threshold to get the noise image contain point in image and use opening technique to remove noises in the image after that separate the adjacent cell and identify unknown region to identity the center of the cell and use watershed algorithm to find boundary of the cell then calculate Euclidean distance to obtain nuclease and cytoplasm area. Finally calculate n/c ratio by using nuclease are divide by cytoplasm area and display on web application to facilitate pathologist.')
+    
+
+    
 
 
 def main():
