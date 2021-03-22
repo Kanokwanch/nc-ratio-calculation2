@@ -211,10 +211,10 @@ def detect(img):
     st.write("0.61 - 1.00 : ", cnt_lessthan10)
     st.write("Sum of cell is ", count)
     #histrogram
-    arr = out
-    fig, ax = plt.subplots()
-    ax.hist(arr, bins=3)
-    st.pyplot(fig)
+    # arr = out
+    # fig, ax = plt.subplots()
+    # ax.hist(arr, bins=3)
+    # st.pyplot(fig)
     #bar graph
     features = np.array(['0.00 - 0.40', '0.41 - 0.60', '0.61 - 1.00'])
     features_importances = np.array([cnt_lessthan04, cnt_lessthan06, cnt_lessthan10])
@@ -232,11 +232,13 @@ def detect(img):
 def about():
 	st.write(
 		'''
-		**Members** 
+		**About** 
 
-            1. aaaomsin
-            2. nearn 
+            1. Kanokwan Chasuwan
+            2. Chanistha Krikhajornkitti
 
+            The purpose of this paper is to calculate nc ratio from ascites fluid cell to facilitate pathologist instead of reading the result by human eyes via microscope.  This project use image processing technique to find boundary of each cell by using HSV color separation after that calculate the nc ratio then use algorithm k-means clustering to find group of cell that looks similar and transform to grayscale image by using threshold to get the noise image contain point in image and use opening technique to remove noises in the image after that separate the adjacent cell and identify unknown region to identity the center of the cell and use watershed algorithm to find boundary of the cell then calculate Euclidean distance to obtain nuclease and cytoplasm area. Finally calculate n/c ratio by using nuclease are divide by cytoplasm area and display on web application to facilitate pathologist.
+            
 		''')
 
 
