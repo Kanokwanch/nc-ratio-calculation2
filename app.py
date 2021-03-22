@@ -233,10 +233,10 @@ def about():
    
 	st.write(
 		'''
-        **Member** 
+        **Member
 
             1. Kanokwan Chasuwan
-            2. Chanistha Krikhajornkitti
+            2. Chanistha Krikhajornkitti **
 
 		**About** 
 
