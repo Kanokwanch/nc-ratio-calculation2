@@ -230,6 +230,16 @@ def detect(img):
     return img
 
 def about():
+
+    st.write(
+        '''
+
+        **Member** 
+        
+            1. Kanokwan Chasuwan
+            2. Chanistha Krikhajornkitti
+
+        ''')
     
     st.write(
 		'''
@@ -252,14 +262,7 @@ def about():
         
             
 		''')
-    st.write(
-        '''
-
-        **Member** 
-            1. Kanokwan Chasuwan
-            2. Chanistha Krikhajornkitti
-
-        ''')
+    
     
 
     
