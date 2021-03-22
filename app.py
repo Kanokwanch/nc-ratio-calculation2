@@ -230,15 +230,8 @@ def detect(img):
     return img
 
 def about():
+    
     st.write(
-        '''
-
-        **Member** 
-            1. Kanokwan Chasuwan
-            2. Chanistha Krikhajornkitti
-
-        ''')
-st.write(
 		'''
 
 		**About**
@@ -259,6 +252,14 @@ st.write(
         
             
 		''')
+st.write(
+        '''
+
+        **Member** 
+            1. Kanokwan Chasuwan
+            2. Chanistha Krikhajornkitti
+
+        ''')
     
 
     
@@ -267,14 +268,7 @@ st.write(
 def main():
     st.title("NC Ratio Calculation 👩🏼‍⚕️")
     st.write("**Senior Project**")
-    # st.write(
-    #     '''
-
-    #     **Member** 
-    #         1. Kanokwan Chasuwan
-    #         2. Chanistha Krikhajornkitti
-
-    #     ''')
+    
     activities = ["Home", "About"]
     choice = st.sidebar.selectbox("Menu", activities)
    
