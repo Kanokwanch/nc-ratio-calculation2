@@ -236,6 +236,9 @@ def about():
 
             1. Kanokwan Chasuwan
             2. Chanistha Krikhajornkitti
+
+            dscdc
+            cdscdsc
             
 		''')
     
