@@ -238,7 +238,7 @@ def about():
             **1. Kanokwan Chasuwan**
             **2. Chanistha Krikhajornkitti**
 
-		**About** 
+		*About* 
 
             1. Kanokwan Chasuwan
             2. Chanistha Krikhajornkitti
