@@ -260,10 +260,12 @@ def about():
 def main():
     st.title("NC Ratio Calculation 👩🏼‍⚕️")
     st.write("**Senior Project**")
-    st.write('''
+    st.write(
+    '''
             **Member** 
-            1. Kanokwan Chasuwan
-            2. Chanistha Krikhajornkitti
+                1. Kanokwan Chasuwan
+                2. Chanistha Krikhajornkitti
+
     ''')
     activities = ["Home", "About"]
     choice = st.sidebar.selectbox("Menu", activities)
