@@ -230,15 +230,11 @@ def detect(img):
     return img
 
 def about():
-   
+    
 	st.write(
 		'''
-        **Member** 
 
-            **1. Kanokwan Chasuwan**
-            **2. Chanistha Krikhajornkitti**
-
-		*About* 
+		**About**
 
             1. Kanokwan Chasuwan
             2. Chanistha Krikhajornkitti
@@ -252,6 +248,8 @@ def about():
             and use watershed algorithm to find boundary of the cell then calculate Euclidean distance to obtain 
             nuclease and cytoplasm area. Finally calculate n/c ratio by using nuclease are divide by cytoplasm area 
             and display on web application to facilitate pathologist.
+
+        
             
 		''')
     
