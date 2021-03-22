@@ -246,9 +246,6 @@ def about():
 
 		**About**
 
-            1. Kanokwan Chasuwan
-            2. Chanistha Krikhajornkitti
-
             The purpose of this paper is to calculate nc ratio from ascites fluid cell to facilitate pathologist instead of reading 
             the result by human eyes via microscope.  This project use image processing technique to find boundary 
             of each cell by using HSV color separation after that calculate the nc ratio then use algorithm k-means clustering 
