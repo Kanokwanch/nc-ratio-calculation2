@@ -82,9 +82,9 @@ def detect(img):
     dist    = cv2.distanceTransform(opening,cv2.DIST_L2,5)
     markers = skwater(-dist,markers,watershed_line=True)
     imgout = img.copy()
-    imgout[markers == 0] = [0,0,255] #Label the watershed_line
+    imgout[markers == 0] = [0,0,255] 
     
-# show date&time
+# show date & time
     tz = pytz.timezone('Asia/Bangkok')
     now1 = datetime.datetime.now(tz)
     month_name = 'x มกราคม กุมภาพันธ์ มีนาคม เมษายน พฤษภาคม มิถุนายน กรกฎาคม สิงหาคม กันยายน ตุลาคม พฤศจิกายน ธันวาคม'.split()[now1.month]
