@@ -1,5 +1,5 @@
 # Application for N/C ratio calculation from ascites fluid cell
-https://share.streamlit.io/aaomsan/nc-ratio-calculation2/main/app.py
+https://share.streamlit.io/kanokwanch/nc-ratio-calculation2/main/app.py
 
 The purpose of this project is to calculate the N/C ratio from ascites fluid cells to facilitate
 pathologist instead of reading the result by human eyes via microscope. This project uses the image
